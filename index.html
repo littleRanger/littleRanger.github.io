@@ -5,15 +5,19 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://littleRanger.com">
   <title>休憩的街角</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="记录走过的路">
+<meta property="og:type" content="website">
 <meta property="og:title" content="休憩的街角">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://littleRanger.com/index.html">
 <meta property="og:site_name" content="休憩的街角">
+<meta property="og:description" content="记录走过的路">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="休憩的街角">
+<meta name="twitter:description" content="记录走过的路">
   
     <link rel="alternative" href="/atom.xml" title="休憩的街角" type="application/atom+xml">
   
@@ -150,6 +154,75 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-flask-web" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/19/flask-web/">flask-web</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/19/flask-web/" class="archive-article-date">
+  	<time datetime="2017-08-19T14:45:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flask开发web总结</p>
+<p>#开头<br>一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。</p>
+<p>##再次提醒自己凡事莫拖拉<br>我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wgsi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。</p>
+<p>##下面是我一一踩过的坑，就从数据库开始吧<br>DB: mysql<br>os: ubuntu<br>flask 的数据库管理 库 flask_alchemy, 数据库迁移 flask_migrate<br>就先说说migrate吧，它的作用是在修改数据库模型后，不需要删除数据库就能直接更新表，否则只能手动删除表重新创建。</p>
+<ol>
+<li>执行init后 migrate会自动在你链接的数据库里面创建一个alembic_xxx的表， 如果你在shell里面手动删除创建表后，再使用migrate的migrate和upgrade命令就会报错</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/19/flask-web/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
