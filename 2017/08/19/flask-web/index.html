@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://littleRanger.com">
   <title>flask-web | 休憩的街角</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="flask开发web总结 #开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 ##再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wgsi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 ##下面是我一一踩过的坑，就从数据">
+  <meta name="description" content="flask开发web总结 开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wsgi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 下面是我一一踩过的坑，就从数据库开始吧D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flask-web">
 <meta property="og:url" content="http://littleRanger.com/2017/08/19/flask-web/index.html">
 <meta property="og:site_name" content="休憩的街角">
-<meta property="og:description" content="flask开发web总结 #开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 ##再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wgsi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 ##下面是我一一踩过的坑，就从数据">
+<meta property="og:description" content="flask开发web总结 开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wsgi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 下面是我一一踩过的坑，就从数据库开始吧D">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-20T01:49:34.606Z">
+<meta property="og:updated_time" content="2017-08-20T01:57:46.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask-web">
-<meta name="twitter:description" content="flask开发web总结 #开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 ##再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wgsi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 ##下面是我一一踩过的坑，就从数据">
+<meta name="twitter:description" content="flask开发web总结 开头一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。 再次提醒自己凡事莫拖拉我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wsgi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。 下面是我一一踩过的坑，就从数据库开始吧D">
   
     <link rel="alternative" href="/atom.xml" title="休憩的街角" type="application/atom+xml">
   
@@ -175,9 +175,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>flask开发web总结</p>
-<p>#开头<br>一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。</p>
-<p>##再次提醒自己凡事莫拖拉<br>我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wgsi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。</p>
-<p>##下面是我一一踩过的坑，就从数据库开始吧<br>DB: mysql<br>os: ubuntu<br>flask 的数据库管理 库 flask_alchemy, 数据库迁移 flask_migrate<br>就先说说migrate吧，它的作用是在修改数据库模型后，不需要删除数据库就能直接更新表，否则只能手动删除表重新创建。</p>
+<h1 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h1><p>一不留神， 已经在微系统所呆了近俩个月了，flask-web的开发也慢慢入门了， 之前一直想着写个博客记录这段时间的学习过程，结果拖到现在。</p>
+<h2 id="再次提醒自己凡事莫拖拉"><a href="#再次提醒自己凡事莫拖拉" class="headerlink" title="再次提醒自己凡事莫拖拉"></a>再次提醒自己凡事莫拖拉</h2><p>我的web开发从那本flaskweb开发实践的经典书开始， 开始还算顺利，简单的demo，mvc框架，wsgi协议，通信过程，当我开始我们的项目时候，踩坑就开始了。</p>
+<h2 id="下面是我一一踩过的坑，就从数据库开始吧"><a href="#下面是我一一踩过的坑，就从数据库开始吧" class="headerlink" title="下面是我一一踩过的坑，就从数据库开始吧"></a>下面是我一一踩过的坑，就从数据库开始吧</h2><p>DB: mysql<br>os: ubuntu<br>flask 的数据库管理 库 flask_alchemy, 数据库迁移 flask_migrate<br>就先说说migrate吧，它的作用是在修改数据库模型后，不需要删除数据库就能直接更新表，否则只能手动删除表重新创建。</p>
 <ol>
 <li>执行init后 migrate会自动在你链接的数据库里面创建一个alembic_xxx的表， 如果你在shell里面手动删除创建表后，再使用migrate的migrate和upgrade命令就会报错</li>
 </ol>
