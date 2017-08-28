@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://littleRanger.com">
-  <title>flask-form-check | 休憩的街角</title>
+  <title>itsdangerous | 休憩的街角</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 wtforms内置的校验器Class wtforms.validators.DataRequired(message=None)此验证器将会检测field是否输入了数值，实际上是进行了if field.data操作。并且，如数数据是一个字符串，那么只包含空格的字符串将会被认为是False。参数：message-当验证失败时返回的错误消息数：message-当验证失败时返回的错误消息 class">
+  <meta name="description" content="flask 令牌验证 HMAC算法：客户登录请求，服务器返回一个随机值，并且在session中保存这个值，用户在发送密码时候用密码和这个值做hmac运算，向服务器发送这个值，服务器收到后，自己也做该运算，对比得到的值，若相同则密码正确。sha1安全哈希算法，长度小于2^64会产生160位的消息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask-form-check">
-<meta property="og:url" content="http://littleRanger.com/2017/08/20/flask-form-check/index.html">
+<meta property="og:title" content="itsdangerous">
+<meta property="og:url" content="http://littleRanger.com/2017/08/28/itsdangerous/index.html">
 <meta property="og:site_name" content="休憩的街角">
-<meta property="og:description" content="1 wtforms内置的校验器Class wtforms.validators.DataRequired(message=None)此验证器将会检测field是否输入了数值，实际上是进行了if field.data操作。并且，如数数据是一个字符串，那么只包含空格的字符串将会被认为是False。参数：message-当验证失败时返回的错误消息数：message-当验证失败时返回的错误消息 class">
+<meta property="og:description" content="flask 令牌验证 HMAC算法：客户登录请求，服务器返回一个随机值，并且在session中保存这个值，用户在发送密码时候用密码和这个值做hmac运算，向服务器发送这个值，服务器收到后，自己也做该运算，对比得到的值，若相同则密码正确。sha1安全哈希算法，长度小于2^64会产生160位的消息。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-20T15:09:50.507Z">
+<meta property="og:updated_time" content="2017-08-28T16:19:50.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask-form-check">
-<meta name="twitter:description" content="1 wtforms内置的校验器Class wtforms.validators.DataRequired(message=None)此验证器将会检测field是否输入了数值，实际上是进行了if field.data操作。并且，如数数据是一个字符串，那么只包含空格的字符串将会被认为是False。参数：message-当验证失败时返回的错误消息数：message-当验证失败时返回的错误消息 class">
+<meta name="twitter:title" content="itsdangerous">
+<meta name="twitter:description" content="flask 令牌验证 HMAC算法：客户登录请求，服务器返回一个随机值，并且在session中保存这个值，用户在发送密码时候用密码和这个值做hmac运算，向服务器发送这个值，服务器收到后，自己也做该运算，对比得到的值，若相同则密码正确。sha1安全哈希算法，长度小于2^64会产生160位的消息。">
   
     <link rel="alternative" href="/atom.xml" title="休憩的街角" type="application/atom+xml">
   
@@ -154,83 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-flask-form-check" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-itsdangerous" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      flask-form-check
+      itsdangerous
     </h1>
   
 
         
-        <a href="/2017/08/20/flask-form-check/" class="archive-article-date">
-  	<time datetime="2017-08-20T15:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
+        <a href="/2017/08/28/itsdangerous/" class="archive-article-date">
+  	<time datetime="2017-08-28T15:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-wtforms内置的校验器"><a href="#1-wtforms内置的校验器" class="headerlink" title="1 wtforms内置的校验器"></a>1 wtforms内置的校验器</h2><p>Class wtforms.validators.DataRequired(message=None)<br>此验证器将会检测field是否输入了数值，实际上是进行了if field.data操作。并且，如数数据是一个字符串，那么只包含空格的字符串将会被认为是False。<br>参数：message-当验证失败时返回的错误消息数：message-当验证失败时返回的错误消息</p>
-<p>class wtforms.validators.Email(message=None)<br>此验证器验证Email的地址，注意只会验证Email的格式，最好在使用的时候你能够自己校验他的真实性，比如激活或者查找<br>参数：message-当验证失败时返回的错误消息验证失败时返回的错误消息</p>
-<p>class wtforms.validators.EqualTo(fieldname, message=None)<br>用于比较两个Field的数据是否相等。<br>参数： filedname-你要比较的另一个Field的名称<br>message-当验证失败时返回的错误消息,可以用%(other_label)s和 %(other_name)s来更提供更多的错误消息<br>此验证器可用于验证一个或者多个相同field的情景，更改密码的代码</p>
-<p>class wtforms.validators.InputRequired(message=None)<br>用于验证field有数据输入，注意与DataRequired的区别，InputRequired主要看是否输入了数据，而DataRequired用于那些强制Post的数据</p>
-<p>class wtforms.validators.IPAddress(ipv4=True, ipv6=False, message=None)<br>ipv4-当为Ture时，允许有效的IPv4地址（默认为True）<br>ipv6-当为Ture时，允许有效的IPv6地址（默认为False）<br>参数：message-当验证失败时返回的错误消息</p>
-<p>class wtforms.validators.Length(min=-1, max=-1,message=None)<br>验证字符串的长度<br>min-输入的最小的字符串长度，如果未指定，则不校验最小字符串<br>max-输入的最大的字符串长度，如果未指定，则不校验最大字符串<br>message-当验证失败时返回的错误消息，如果需要，可以通过%（min）d，%(max)d来自行设置</p>
-<p>class wtforms.validators.NumberRange(min=None, max=None,message=None)<br>用于验证数据是否在最小值与最大值之间，支持的常用的数据类型，如float等，不只是int<br>min-输入的最小的字符串长度，如果未指定，则不校验最小字符串<br>max-输入的最大的字符串长度，如果未指定，则不校验最大字符串<br>message-当验证失败时返回的错误消息，如果需要，可以通过%（min）d，%(max)d来自行设置</p>
-<p>class wtforms.validators.Regexp(regex, flags=0, message=None)<br>通过正则表达式验证<br>regex-正则表达式，也可以通过参数传递<br>flags-regex使用标示，如re.IGNORECASE，如果regex不是一个字符串将忽略<br>message-当验证失败时返回的错误消息</p>
-<p>class wtforms.validators.URL(require_tld=True, message=None)<br>通过正则表达式对URL进行简单的验证，与Email验证器相似，可能在之后需要其他的方式验证其真实性<br>require_tld-当设置为True时，必须在域名中包含顶级域名等，当需要验证localhost时设置为False</p>
-<h2 id="2-自定义验证器-namefield验证器"><a href="#2-自定义验证器-namefield验证器" class="headerlink" title="2 自定义验证器 - namefield验证器"></a>2 自定义验证器 - namefield验证器</h2><p><strong>在类里面，编写 def validate_namefieldxxx(form, field)函数，通过raise ValidationError提示错误信息，编写在类里面的验证器，不需要在显示在feild里面指定validators=， 比如
-</strong><br>class LoginForm(Form):</p>
-<pre><code>openid = StringField(&apos;openid&apos;, validators=[DataRequired()])
+        <h2 id="flask-令牌验证"><a href="#flask-令牌验证" class="headerlink" title="flask 令牌验证"></a>flask 令牌验证</h2><ol>
+<li>HMAC算法：客户登录请求，服务器返回一个随机值，并且在session中保存这个值，用户在发送密码时候用密码和这个值做hmac运算，向服务器发送这个值，服务器收到后，自己也做该运算，对比得到的值，若相同则密码正确。sha1安全哈希算法，长度小于2^64会产生160位的消息。</li>
+</ol>
 
-remember_me = BooleanField(&apos;remember_me&apos;, default=False)
-
-def validate_remember_me(form, field):
-
-    if field.data != False:
-
-        raise ValidationError(&apos;remember_me must be False&apos;)
-</code></pre><h2 id="3-自定义验证器-把验证器编写成单独的函数"><a href="#3-自定义验证器-把验证器编写成单独的函数" class="headerlink" title="3 自定义验证器 - 把验证器编写成单独的函数"></a>3 自定义验证器 - 把验证器编写成单独的函数</h2><p>这样需要在feild里面指定validators=，比如</p>
-<p>def validate_remember_me(form, field):</p>
-<pre><code>if field.data != False:
-
-    raise ValidationError(&apos;remember_me must be False2&apos;)
-</code></pre><p>class LoginForm(Form):</p>
-<pre><code>openid = StringField(&apos;openid&apos;, validators=[DataRequired()])
-
-remember_me = BooleanField(&apos;remember_me&apos;, default=False,
-
-                           validators=[validate_remember_me ])
-</code></pre><h2 id="4-自定义验证器-把验证器编写成单独的类"><a href="#4-自定义验证器-把验证器编写成单独的类" class="headerlink" title="4 自定义验证器 - 把验证器编写成单独的类"></a>4 自定义验证器 - 把验证器编写成单独的类</h2><p>class Length(object):</p>
-<pre><code>def __init__(self, min=-1, max=-1, message=None):
-
-    self.min = min
-
-    self.max = max
-
-    if not message:
-
-        message = u&apos;Field must be between %i and %icharacters long.&apos; % (min, max)
-
-    self.message = message
-
-
-
-def __call__(self, form, field):
-
-    l = field.data and len(field.data) or 0
-
-    if l &lt; self.min or self.max != -1 and l &gt; self.max:
-
-        raise ValidationError(self.message)
-</code></pre><p>length = Length</p>
-<p>class MyForm(Form):</p>
-<pre><code>name = StringField(&apos;Name&apos;, [InputRequired(), length(max=50)])
-</code></pre>
       
 
       
@@ -309,7 +256,7 @@ def __call__(self, form, field):
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://littleRanger.com/2017/08/20/flask-form-check/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://littleRanger.com/2017/08/28/itsdangerous/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +270,9 @@ def __call__(self, form, field):
   
 <nav id="article-nav">
   
-    <a href="/2017/08/28/itsdangerous/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          itsdangerous
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/19/flask-web/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flask-web</div>
+    <a href="/2017/08/20/flask-form-check/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flask-form-check</div>
       <i class="icon-circle-right"></i>
     </a>
   
