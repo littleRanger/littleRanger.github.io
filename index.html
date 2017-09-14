@@ -160,14 +160,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="压力测试信息搜集"><a href="#压力测试信息搜集" class="headerlink" title="压力测试信息搜集"></a>压力测试信息搜集</h1><p>##Siege命令常用参数</p>
-<p>-c 200 指定并发数200<br>-r 5 指定测试的次数5<br>-f urls.txt 制定url的文件<br>-i internet系统，随机发送url<br>-b 请求无需等待 delay=0<br>-t 5 持续测试5分钟</p>
-<h1 id="r和-t一般不同时使用"><a href="#r和-t一般不同时使用" class="headerlink" title="-r和-t一般不同时使用"></a>-r和-t一般不同时使用</h1><p>##常用的siege命令举例</p>
-<h1 id="200个并发对http-www-google-com发送请求100次"><a href="#200个并发对http-www-google-com发送请求100次" class="headerlink" title="200个并发对http://www.google.com发送请求100次"></a>200个并发对<a href="http://www.google.com发送请求100次" target="_blank" rel="external">http://www.google.com发送请求100次</a></h1><p>siege<br> -c 200 -r 100 <a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a></p>
-<h1 id="在urls-txt中列出所有的网址"><a href="#在urls-txt中列出所有的网址" class="headerlink" title="在urls.txt中列出所有的网址"></a>在urls.txt中列出所有的网址</h1><p>siege<br> -c 200 -r 100 -f urls.txt</p>
-<h1 id="随机选取urls-txt中列出所有的网址"><a href="#随机选取urls-txt中列出所有的网址" class="headerlink" title="随机选取urls.txt中列出所有的网址"></a>随机选取urls.txt中列出所有的网址</h1><p>siege<br> -c 200 -r 100 -f urls.txt -i</p>
-<h1 id="delay-0，更准确的压力测试，而不是功能测试"><a href="#delay-0，更准确的压力测试，而不是功能测试" class="headerlink" title="delay=0，更准确的压力测试，而不是功能测试"></a>delay=0，更准确的压力测试，而不是功能测试</h1><p>siege<br> -c 200 -r 100 -f urls.txt -i -b</p>
-<h1 id="指定http请求头-文档类型"><a href="#指定http请求头-文档类型" class="headerlink" title="指定http请求头 文档类型"></a>指定http请求头 文档类型</h1><p>siege<br> -H “Content-Type:application/json”</p>
+        <h1 id="压力测试信息搜集"><a href="#压力测试信息搜集" class="headerlink" title="压力测试信息搜集"></a>压力测试信息搜集</h1><h2 id="Siege命令常用参数"><a href="#Siege命令常用参数" class="headerlink" title="Siege命令常用参数"></a>Siege命令常用参数</h2><p>-c 200 指定并发数200<br>-r 5 指定测试的次数5<br>-f urls.txt 制定url的文件<br>-i internet系统，随机发送url<br>-b 请求无需等待 delay=0<br>-t 5 持续测试5分钟<br>-r和-t一般不同时使用</p>
+<p>##常用的siege命令举例</p>
+<p>200个并发对<a href="http://www.google.com发送请求100次" target="_blank" rel="external">http://www.google.com发送请求100次</a></p>
+<p>siege<br> -c 200 -r 100 <a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a><br> 在urls.txt中列出所有的网址</p>
+<p>siege<br> -c 200 -r 100 -f urls.txt<br> 随机选取urls.txt中列出所有的网址</p>
+<p>siege<br> -c 200 -r 100 -f urls.txt -i<br> delay=0，更准确的压力测试，而不是功能测试</p>
+<p>siege<br> -c 200 -r 100 -f urls.txt -i -b<br> 指定http请求头 文档类型</p>
+<p>siege<br> -H “Content-Type:application/json”</p>
 <p>-c 200 -r 100 -f urls.txt -i -b<br>Siege输出结果说明</p>
 <p>Transactions: 总共测试次数<br>Availability: 成功次数百分比<br>Elapsed time: 总共耗时多少秒<br>Data transferred: 总共数据传输<br>Response time: 等到响应耗时<br>Transaction rate: 平均每秒处理请求数<br>Throughput: 吞吐率<br>Concurrency: 最高并发<br>Successful transactions: 成功的请求数<br>Failed transactions: 失败的请求数</p>
 <p>#Siege使用的一些总结</p>
