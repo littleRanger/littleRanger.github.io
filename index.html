@@ -155,6 +155,67 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-pressure-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="压力测试信息搜集"><a href="#压力测试信息搜集" class="headerlink" title="压力测试信息搜集"></a>压力测试信息搜集</h1><p>##Siege命令常用参数</p>
+<p>-c 200 指定并发数200<br>-r 5 指定测试的次数5<br>-f urls.txt 制定url的文件<br>-i internet系统，随机发送url<br>-b 请求无需等待 delay=0<br>-t 5 持续测试5分钟</p>
+<h1 id="r和-t一般不同时使用"><a href="#r和-t一般不同时使用" class="headerlink" title="-r和-t一般不同时使用"></a>-r和-t一般不同时使用</h1><p>##常用的siege命令举例</p>
+<h1 id="200个并发对http-www-google-com发送请求100次"><a href="#200个并发对http-www-google-com发送请求100次" class="headerlink" title="200个并发对http://www.google.com发送请求100次"></a>200个并发对<a href="http://www.google.com发送请求100次" target="_blank" rel="external">http://www.google.com发送请求100次</a></h1><p>siege<br> -c 200 -r 100 <a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a></p>
+<h1 id="在urls-txt中列出所有的网址"><a href="#在urls-txt中列出所有的网址" class="headerlink" title="在urls.txt中列出所有的网址"></a>在urls.txt中列出所有的网址</h1><p>siege<br> -c 200 -r 100 -f urls.txt</p>
+<h1 id="随机选取urls-txt中列出所有的网址"><a href="#随机选取urls-txt中列出所有的网址" class="headerlink" title="随机选取urls.txt中列出所有的网址"></a>随机选取urls.txt中列出所有的网址</h1><p>siege<br> -c 200 -r 100 -f urls.txt -i</p>
+<h1 id="delay-0，更准确的压力测试，而不是功能测试"><a href="#delay-0，更准确的压力测试，而不是功能测试" class="headerlink" title="delay=0，更准确的压力测试，而不是功能测试"></a>delay=0，更准确的压力测试，而不是功能测试</h1><p>siege<br> -c 200 -r 100 -f urls.txt -i -b</p>
+<h1 id="指定http请求头-文档类型"><a href="#指定http请求头-文档类型" class="headerlink" title="指定http请求头 文档类型"></a>指定http请求头 文档类型</h1><p>siege<br> -H “Content-Type:application/json”</p>
+<p>-c 200 -r 100 -f urls.txt -i -b<br>Siege输出结果说明</p>
+<p>Transactions: 总共测试次数<br>Availability: 成功次数百分比<br>Elapsed time: 总共耗时多少秒<br>Data transferred: 总共数据传输<br>Response time: 等到响应耗时<br>Transaction rate: 平均每秒处理请求数<br>Throughput: 吞吐率<br>Concurrency: 最高并发<br>Successful transactions: 成功的请求数<br>Failed transactions: 失败的请求数</p>
+<p>#Siege使用的一些总结</p>
+<p>1，发送post请求时，url格式为：<a href="http://www.xxxx.com/" target="_blank" rel="external">http://www.xxxx.com/</a> POST p1=v1&amp;p2=v2<br>2，如果url中含有空格和中文，要先进行url编码，否则siege发送的请求url不准确</p>
+<p>添加</p>
+<p>siege -C 可以查看相关的配置参数,可以自行修改,比如是否显示log,超时时间</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/04/pressure-test/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-itsdangerous" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
